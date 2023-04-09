@@ -1,9 +1,47 @@
 body {
+    height: 100%;
+    width: 100%;
 }
 
+input {
+    padding: 0.2em; 
+    box-sizing: border-box;
+    width: 100% 
+} 
+
+table {
+    border: 1px solid black;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+td { 
+    text-align: center;
+}
+
+button {
+    width: 80%;
+    height: 80%;
+}
 
 .calculator {
-    background-color: grey;
-    border: 10px;
+    height: 300px;
+    width: 300px;
+}
 
+#num-input {
+    width: 100%;
+}
+
+#input-text {
+    width: 95%;
+    height: 95%;
+}
+
+#submit {
+    width: 100%;
+}
+
+#submit-button {
+    width: 95%;
 }
