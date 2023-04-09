@@ -7,12 +7,11 @@ const express_1 = __importDefault(require("express"));
 const path_1 = __importDefault(require("path"));
 const app = (0, express_1.default)();
 const port = 3000;
-app.use(express_1.default.static(__dirname + '/../dist'));
+app.use(express_1.default.static(path_1.default.join(__dirname + '/../dist')));
+app.use(express_1.default.static(path_1.default.join(__dirname + '/../public/css')));
+app.use(express_1.default.static(path_1.default.join(__dirname + '/../public/html')));
 app.get('/', (req, res) => {
-    res.sendFile(path_1.default.join(__dirname + '/../src/index.html'));
-});
-app.get('/home', (req, res) => {
-    res.send('run prop');
+    res.sendFile(path_1.default.join('index.html'));
 });
 app.listen(port, () => {
     return console.log(`Express is listening at http://localhost:${port}`);
