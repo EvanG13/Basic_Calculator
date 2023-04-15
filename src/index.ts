@@ -49,8 +49,18 @@ buttons.forEach((button: HTMLElement | null, index: number) => {
     // therefore, solve the current equation
     else if (button && index === 10) {
         button?.addEventListener('click', () => {
-            // TODO
-            console.log("TODO : solve equation");
+            try {
+                var expression = 'return ' + equation;
+                var result = new Function(expression);
+                equation = result().toString();
+
+                numText.value = equation;
+            }
+            catch(e) {
+                if (e instanceof SyntaxError) {
+                    alert("Illegal expression")
+                }
+            }
         }) 
     }
     // buttons[11-14] : correspond to the arithmetic operations

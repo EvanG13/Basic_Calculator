@@ -38,7 +38,17 @@ buttons.forEach((button, index) => {
     }
     else if (button && index === 10) {
         button === null || button === void 0 ? void 0 : button.addEventListener('click', () => {
-            console.log("TODO : solve equation");
+            try {
+                var expression = 'return ' + equation;
+                var result = new Function(expression);
+                equation = result().toString();
+                numText.value = equation;
+            }
+            catch (e) {
+                if (e instanceof SyntaxError) {
+                    alert("Illegal expression");
+                }
+            }
         });
     }
     else if (button && index >= 11 && index < 15) {
