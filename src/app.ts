@@ -13,10 +13,6 @@ app.get('/', (req: Request, res: Response) => {
     res.sendFile(path.join('index.html'));
 });
 
-// app.get('/home', (req: Request, res: Response) => {
-//     res.send('run prop');
-// })
-
 app.listen(port, () => {
     return console.log(`Express is listening at http://localhost:${port}`);
 });
